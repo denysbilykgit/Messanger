@@ -6,7 +6,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:20120704Den@localhost:5432/messanger'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgresmessanger_user:uFOOVIWnoJo4Ii0jGzY5gtm0iz5vWIbB@dpg-d9kd6f942hec73ako8u0-a/postgresmessanger'
 app.config["SECRET_KEY"] = "w"
 
 db = SQLAlchemy(app)
@@ -197,6 +197,8 @@ def messages():
     db.session.commit()
     return render_template("messages.html", messages_unread=unread_messages_dict, messages_read=read_messages_dict)
 
+with app.app_context():
+    db.create_all()
 
 if __name__ == "__main__":
     with app.app_context():
