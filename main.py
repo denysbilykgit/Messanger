@@ -197,10 +197,6 @@ def messages():
     db.session.commit()
     return render_template("messages.html", messages_unread=unread_messages_dict, messages_read=read_messages_dict)
 
-@app.route("/search_friends")
-def search_friends():
-    return render_template("search_friends.html")
-
 @app.route("/logout")
 @login_required
 def logout():
