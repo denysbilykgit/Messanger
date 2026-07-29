@@ -1,7 +1,7 @@
 # 'postgresql://postgres:20120704Den@localhost:5432/messanger'
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
-from flask_login import LoginManager, UserMixin, login_required, current_user, login_user
+from flask_login import LoginManager, UserMixin, login_required, current_user, login_user, logout_user
 from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
@@ -196,6 +196,16 @@ def messages():
     
     db.session.commit()
     return render_template("messages.html", messages_unread=unread_messages_dict, messages_read=read_messages_dict)
+
+@app.route("/search_friends")
+def search_friends():
+    return render_template("search_friends.html")
+
+@app.route("/logout")
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for("login"))
 
 #with app.app_context():
 #    db.create_all()

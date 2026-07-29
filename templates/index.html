@@ -5,16 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/Messanger/static/css/style.css">
 </head>
 <body>
     <div class="register-container">
         <div class="register-card">
             <h1 class="text-center mb-4">Hello, {{current_user.username}}!</h1>
 
-            <div class="text-center mt-3">
-                <a href="/search_friends">Search Friends</a>
-            </div>
+            <form action="/search_friends" method="get">
+                <button class="btn btn-primary w-100" type="submit">
+                    Search Friends
+                </button>
+            </form>
+
+            <form action="/logout" method="get">
+                <button class="btn btn-danger w-100 mt-3">
+                    Logout
+                </button>
+            </form>
 
         </div>
     </div>  
