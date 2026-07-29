@@ -205,10 +205,10 @@ def search_friends():
 @login_required
 def logout():
     logout_user()
-    return redirect(url_for("login"))
+    return redirect("/login")
 
-#with app.app_context():
-#    db.create_all()
+with app.app_context():
+    db.create_all()
 
 if __name__ == "__main__":
     with app.app_context():
