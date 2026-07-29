@@ -1,0 +1,66 @@
+body{
+    margin: 0;
+    background: linear-gradient(135deg, #a6a1ff, #1a0046);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.register-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.register-card{
+    width: 400px;
+    background: white;
+    padding: 35px;
+    border-radius: 40px;
+    box-shadow: 0 15px 35px rgba(0,0,0,.2);
+    font-weight: 700;
+    color: #333;
+    animation: fadeIn .6s ease;
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.register-card input{
+    border-color: #6c63ff;
+    margin-bottom: 8px;
+    border-radius: 20px;
+    padding: 6px;
+    box-shadow: 0 0 10px rgba(108,99,255,.3);
+}
+
+.register-card .btn{
+    border-radius: 20px;
+    padding: 10px;
+    font-weight: 600;
+}
+
+.register-card .btn:hover{
+    transform: translateY(-2px);
+    transition: .2s;
+}
+
+.register-card a{
+    text-decoration: none;
+    color: #4f46e5;
+    font-weight: 500;
+}
+
+.register-card a:hover{
+    text-decoration: underline;
+}
